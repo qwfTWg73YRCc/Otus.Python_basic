@@ -57,53 +57,12 @@ for i in range(1, N):
 print('Initial list of numbers:')
 print(nums_initial)
 
-# тестирование возведения в степень списка
-
-a = [1, 2, 3]
-print(plus_1(a))
-print(my_pow(nums_initial))
-for i in range(len(a)):
-    a[i] += 1
-
-print(a)
-
-# Список чисел, возведённых в степень
-exp = []
-
-# Выполнение функции возведения в степень.
-
-# exp = my_pow(nums_initial, 2)
-
-# print(my_pow(nums_initial, 2))
-# print(plus_1(nums_initial, 2))
-
-# print(exp)
-# print(nums_initial[i])
-
-
-'''
-for i in range(r):
-    print("Введите", i+1, "число:")
-    b.append(input("число: "))
-    exp.append(exponent_num)
-    while not b[i].isdigit():
-        print('Это не число!')
-        print("Введите", i+1, "число")
-        b.append(input("число: "))
-    b[i] = float(b[i])
-'''
-# Конечно, проще так, но тогда не понятно, как писать
-# условие на корректность ввода
-# b = [float(input('Число : ')) for i in range(r)]
-
-
-# print('Вы ввели: ', b)
-
-# функция возведения в степень power
-
-
-# def power(a=1, expo=2):
-#    operator.pow(a, expo)
+# тестирование возведения в степень m чисел из списка
+print()
+m = 5
+print('Exponentiation:', m, 'power')
+print('Result:')
+print(my_pow(nums_initial, m))
 
 # возведение в степень с помощью map и operator.pow
 
