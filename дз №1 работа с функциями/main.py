@@ -3,6 +3,7 @@ import operator
 import math
 import time
 import functools
+import random
 
 
 if __name__ == '__main__':
@@ -13,11 +14,17 @@ if __name__ == '__main__':
 Принимает список из N целых чисел 
 и выдаёт список из них возведённых в заданную степень
 '''
+i = 0
 
-def my_pow(numbers=[1], expo=2):
-    for i in numbers:
-        exponentiated[i] = operator.pow(a, expo)
-    return exponentiated
+def my_pow(numbers=[1, 2], expo=2):
+    for i in range(len(numbers)):
+        numbers[i] = operator.pow(numbers[i], expo)
+    return numbers
+
+def plus_1(numbers=[1, 2]):
+    for i in range(len(numbers)):
+        numbers[i] += 1
+    return numbers
 
 '''    
      = input('Введите число чисел: ')
@@ -39,11 +46,40 @@ r = int(ran)
 
 # b[i] must be an integer
 '''
-# Задаём исходный список из N чисел
-# Пусть этот список состоит из множества случайных
-# чисел от 1 до 100
-b = []
+# Задаём исходный список из N чисел (nums_initial)
+# Пусть этот список состоит из множества
+# случайных целых чисел от 1 до 1000
+nums_initial = []
+N = 10
+
+for i in range(1, N):
+    nums_initial.append(random.randint(1, 1000))
+print('Initial list of numbers:')
+print(nums_initial)
+
+# тестирование возведения в степень списка
+
+a = [1, 2, 3]
+print(plus_1(a))
+print(my_pow(nums_initial))
+for i in range(len(a)):
+    a[i] += 1
+
+print(a)
+
+# Список чисел, возведённых в степень
 exp = []
+
+# Выполнение функции возведения в степень.
+
+# exp = my_pow(nums_initial, 2)
+
+# print(my_pow(nums_initial, 2))
+# print(plus_1(nums_initial, 2))
+
+# print(exp)
+# print(nums_initial[i])
+
 
 '''
 for i in range(r):
@@ -61,19 +97,19 @@ for i in range(r):
 # b = [float(input('Число : ')) for i in range(r)]
 
 
-print('Вы ввели: ', b)
+# print('Вы ввели: ', b)
 
 # функция возведения в степень power
 
 
-def power(a=1, expo=2):
-    operator.pow(a, expo)
+# def power(a=1, expo=2):
+#    operator.pow(a, expo)
 
 # возведение в степень с помощью map и operator.pow
 
 
-exponentiated = list(map(operator.pow, b, exp))
-print("Возведение в степень:", exponentiated)
+# exponentiated = list(map(operator.pow, b, exp))
+# print("Возведение в степень:", exponentiated)
 
 
 from pprint import pprint
