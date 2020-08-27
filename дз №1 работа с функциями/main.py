@@ -6,9 +6,7 @@ import functools
 import random
 
 
-if __name__ == '__main__':
-    print('Home work No 1')
-
+CONSTANT = 1
 '''
 Функция №1.
 Принимает список из N целых чисел 
@@ -58,7 +56,7 @@ def is_prime(num=3):
 
 
 # Фильтрация чисел
-def filtration(numbers=[1, 2], CONSTANT = 1):
+def filtration(numbers=[1, 2]):
     answer = []
     if CONSTANT == 1:
         answer = list(filter(lambda x: x % 2 == 0, numbers))
@@ -107,6 +105,8 @@ def fibonacci(n):
     return fibonacci(n - 1) + fibonacci(n - 2)
 
 
+if __name__ == '__main__':
+    print('Home work No 1')
 
 # Задаём исходный список из N чисел (nums_initial)
 # Пусть этот список состоит из множества
@@ -124,7 +124,7 @@ print(nums_initial)
 # пример работы функции возведения в степень m чисел из списка
 print()
 m = 5
-print('Exponentiation:', m, 'power')
+print('Exponentiation. Exponent is', m)
 print('')
 print('Result:')
 print(my_pow_map(nums_initial, m))
@@ -142,9 +142,11 @@ print('Initial list of numbers:')
 print(nums_initial)
 
 print('')
-filtration(nums_initial, 1)
-filtration(nums_initial, 2)
-filtration(nums_initial, 3)
+filtration(nums_initial)
+CONSTANT = 2
+filtration(nums_initial)
+CONSTANT = 3
+filtration(nums_initial)
 
 '''
 Пример работы функции вычисления Quantity чисел Фибоначчи
