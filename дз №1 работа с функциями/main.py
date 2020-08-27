@@ -62,30 +62,44 @@ def filtration(numbers=[1, 2], CONSTANT = 1):
     answer = []
     if CONSTANT == 1:
         answer = list(filter(lambda x: x % 2 == 0, numbers))
-        print('Even numbers in the list:')
-        print(answer)
         if answer == [] :
             print('There are no any odd numbers in the list!')
+        else:
+            print('Even numbers in the list:')
+            print(answer)
     elif CONSTANT == 2:
         answer = list(filter(lambda x: x % 2 != 0, numbers))
-        print('Odd numbers in the list:')
-        print(answer)
         if answer == [] :
             print('There are no any odd numbers in the list!')
+        else:
+            print('Odd numbers in the list:')
+            print(answer)
     elif CONSTANT == 3:
         answer = list(filter(is_prime, numbers))
-        print('Primes in the list:')
-        print(answer)
         if answer == [] :
             print('There are no any primes in the list!')
+        else:
+            print('Primes in the list:')
+            print(answer)
     return answer
 
 '''Функция №3: вычисление чисел Фибоначчи с рекурсией'''
-
 '''
 Декоратор trace определяет вложенные входы в функцию
 '''
+def trace(func):
+    func.level = 0
+    @functools.wraps(func)
+    def inner(*args, **kwargs):
+        print('____' * func.level + ' --> {}({})'.format(func.__name__, args[0]))
+        func.level += 1
+        f = func(*args, **kwargs)
+        func.level -= 1
+        print('____' * func.level + ' <-- {}({}) == {}'.format(func.__name__, args[0], f))
+        return f
+    return inner
 
+@trace
 def fibonacci(n):
     """Считает числа Фибоначчи с рекурсией"""
     if n in (1, 2):
@@ -142,13 +156,13 @@ Quantity = 5
 print(Quantity, 'first Fibonacci numbers:')
 
 for i in range(1, Quantity+1):
-    print(fibonacci(i))
+    fibonacci(i)
 
 '''
 Пример работы декоратора Trace
-'''
-print('Trace')
 
+print('Trace')
+'''
 
 
 
