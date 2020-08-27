@@ -80,6 +80,20 @@ def filtration(numbers=[1, 2], CONSTANT = 1):
             print('There are no any primes in the list!')
     return answer
 
+'''Функция №3: вычисление чисел Фибоначчи с рекурсией'''
+
+'''
+Декоратор trace определяет вложенные входы в функцию
+'''
+
+def fibonacci(n):
+    """Считает числа Фибоначчи с рекурсией"""
+    if n in (1, 2):
+        return 1
+    return fibonacci(n - 1) + fibonacci(n - 2)
+
+
+
 # Задаём исходный список из N чисел (nums_initial)
 # Пусть этот список состоит из множества
 # случайных целых чисел от 1 до 1000
@@ -118,22 +132,22 @@ filtration(nums_initial, 1)
 filtration(nums_initial, 2)
 filtration(nums_initial, 3)
 
+'''
+Пример работы функции вычисления Quantity чисел Фибоначчи
+'''
+print('')
+print('Function 3: Fibonacci + @Trace')
 
-qua = int(input('Введите количество чисел Фибоначчи: '))
+Quantity = 5
+print(Quantity, 'first Fibonacci numbers:')
 
-
-def fibonacci(n):
-    """Считает числа Фибоначчи с рекурсией"""
-    if n in (1, 2):
-        return 1
-    return fibonacci(n - 1) + fibonacci(n - 2)
-
-
-for i in range(1, qua+1):
+for i in range(1, Quantity+1):
     print(fibonacci(i))
-"По поводу подсчёта входов я ничего не понял,"
-"но хотел бы увидеть решение. Интересно."
 
+'''
+Пример работы декоратора Trace
+'''
+print('Trace')
 
 
 
