@@ -15,12 +15,7 @@ if __name__ == '__main__':
 и выдаёт список из них возведённых в заданную степень
 '''
 i = 0
-'''
-def my_pow(numbers=[1, 2], expo=2):
-    for i in range(len(numbers)):
-        numbers[i] = operator.pow(numbers[i], expo)
-    return numbers
-'''
+
 def my_pow_map(numbers=[1, 2], expo=2):
     expon = []
     for i in range(len(numbers)):
@@ -84,41 +79,7 @@ def filtration(numbers=[1, 2], CONSTANT = 1):
         if answer == [] :
             print('There are no any primes in the list!')
     return answer
-'''
-if choose == '1':
-    even = list(filter(lambda x: x % 2 == 0, a))
-    print(even)
-elif choose == '2':
-    odd = list(filter(lambda x: x % 2 != 0, a))
-    print(odd)
-elif choose == '3':
-    primes = list(filter(is_prime, a))
-    if not primes:
-        print('В списке нет простых чисел!')
-    else:
-        print(primes)
-'''
 
-'''    
-     = input('Введите число чисел: ')
-    exponent = input('Введите показатель степени: ')
-
-
-while not ran.isdigit() or not exponent.isdigit():
-    print('error')
-    if not ran.isdigit():
-        ran = input('Введите число чисел: ')
-    if not exponent.isdigit():
-        exponent = input('Введите показатель степени: ')
-
-exponent_num = int(exponent)
-r = int(ran)
-# exponent must be an integer
-
-# r must be a positive integer
-
-# b[i] must be an integer
-'''
 # Задаём исходный список из N чисел (nums_initial)
 # Пусть этот список состоит из множества
 # случайных целых чисел от 1 до 1000
@@ -140,22 +101,6 @@ print('')
 print('Result:')
 print(my_pow_map(nums_initial, m))
 
-'''
-N = input('Количество чисел: ')
-
-if N.isdigit():
-    N = int(N)
-else:
-    N = ''
-    print('error')
-    N = input('Количество чисел: ')
-
-a = [i for i in range(N)]
-
-print(a)
-'''
-
-# choose = input('Вывести: четные (1), нечётные (2), простые (3) :')
 
 # Пример работы функции фильтрации чисел.
 # Сгенерируем список из N случайных целых чисел в диапазоне от 1 до 1000
@@ -174,22 +119,6 @@ filtration(nums_initial, 2)
 filtration(nums_initial, 3)
 
 
-
-
-'''
-if choose == '1':
-    even = list(filter(lambda x: x % 2 == 0, a))
-    print(even)
-elif choose == '2':
-    odd = list(filter(lambda x: x % 2 != 0, a))
-    print(odd)
-elif choose == '3':
-    primes = list(filter(is_prime, a))
-    if not primes:
-        print('В списке нет простых чисел!')
-    else:
-        print(primes)
-'''
 qua = int(input('Введите количество чисел Фибоначчи: '))
 
 
