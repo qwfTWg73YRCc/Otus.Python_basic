@@ -6,17 +6,19 @@ import functools
 import random
 
 
-CONSTANT = 1
+TYPE_EVEN = 1
+TYPE_ODD = 2
+TYPE_PRIME = 3
 '''
 Функция №1.
 Принимает список из N целых чисел 
 и выдаёт список из них возведённых в заданную степень
 '''
-i = 0
 
-def my_pow_map(numbers=[1, 2], expo=2):
+
+def my_pow_map(numbers=[1], expo=2):
     expon = []
-    for i in range(len(numbers)):
+    for i in numbers:
         expon.append(expo)
     return list(map(operator.pow, numbers, expon))
 
@@ -56,29 +58,31 @@ def is_prime(num=3):
 
 
 # Фильтрация чисел
-def filtration(numbers=[1, 2]):
+def filtration(numbers=[1], num_type=1):
     answer = []
-    if CONSTANT == 1:
+    if num_type == TYPE_EVEN:
         answer = list(filter(lambda x: x % 2 == 0, numbers))
         if answer == [] :
-            print('There are no any odd numbers in the list!')
+            print('There are no any even numbers in the list!')
         else:
             print('Even numbers in the list:')
             print(answer)
-    elif CONSTANT == 2:
+    elif num_type == TYPE_ODD:
         answer = list(filter(lambda x: x % 2 != 0, numbers))
         if answer == [] :
             print('There are no any odd numbers in the list!')
         else:
             print('Odd numbers in the list:')
             print(answer)
-    elif CONSTANT == 3:
+    elif num_type == TYPE_PRIME:
         answer = list(filter(is_prime, numbers))
         if answer == [] :
             print('There are no any primes in the list!')
         else:
             print('Primes in the list:')
             print(answer)
+    else:
+        print('Wrong constant!')
     return answer
 
 '''Функция №3: вычисление чисел Фибоначчи с рекурсией'''
@@ -100,7 +104,7 @@ def trace(func):
 @trace
 def fibonacci(n):
     """Считает числа Фибоначчи с рекурсией"""
-    if n in (1, 2):
+    if n < 3:
         return 1
     return fibonacci(n - 1) + fibonacci(n - 2)
 
@@ -123,7 +127,7 @@ print(nums_initial)
 
 # пример работы функции возведения в степень m чисел из списка
 print()
-m = 5
+m = 4
 print('Exponentiation. Exponent is', m)
 print('')
 print('Result:')
@@ -142,14 +146,14 @@ print('Initial list of numbers:')
 print(nums_initial)
 
 print('')
-filtration(nums_initial)
-CONSTANT = 2
-filtration(nums_initial)
-CONSTANT = 3
-filtration(nums_initial)
+filtration(nums_initial, TYPE_EVEN)
+
+filtration(nums_initial, TYPE_ODD)
+
+filtration(nums_initial, TYPE_PRIME)
 
 '''
-Пример работы функции вычисления Quantity чисел Фибоначчи
+Пример работы функции вычисления чисел Фибоначчи Quantity 
 '''
 print('')
 print('Function 3: Fibonacci + @Trace')
@@ -159,6 +163,8 @@ print(Quantity, 'first Fibonacci numbers:')
 
 for i in range(1, Quantity+1):
     fibonacci(i)
+
+print('Check zero Fibonacci number:', fibonacci(0))
 
 '''
 Пример работы декоратора Trace
